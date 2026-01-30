@@ -242,7 +242,7 @@ app.post("/api/book", async (req, res) => {
 });
 
 // Capture all other routes and return the index.html from static folder
-app.get("*", (req, res) => {
+app.get(/(.*)/, (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
