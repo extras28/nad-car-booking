@@ -3,14 +3,18 @@
     "version": "1.0.0",
     "scripts": {
         "install-client": "cd client && npm install",
-        "install-server": "cd server && npm install",
         "build-client": "cd client && npm run build",
-        "postinstall": "npm run install-client && npm run install-server",
+        "postinstall": "npm run install-client",
         "build": "npm run build-client && rm -rf server/public && mkdir -p server/public && cp -r client/dist/* server/public/",
         "start": "node server/index.js"
     },
     "engines": {
         "node": ">=18.0.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "cors": "^2.8.6",
+        "dotenv": "^17.2.3",
+        "express": "^5.2.1",
+        "nodemailer": "^7.0.13"
+    }
 }
